@@ -1,0 +1,48 @@
+# development and testing artifacts
+**/*.swp
+.lintcache
+venv/
+.venv/
+instance/
+*.pyc
+__pycache__/
+.pytest_cache/
+.coverage
+htmlcov/
+html/
+env/
+win-venv/
+app_starter/db.sqlite3
+
+# build artifacts
+dist/
+build/
+*.egg-info/
+
+# todolist
+todolist.txt
+
+# Environment variables
+.env
+.env.dev
+.env.prod
+.env.prod.db
+.env.*
+
+# Files generated from coverage testing
+app_starter/unit_tests/*.js
+app_starter/unit_tests/*.html
+app_starter/unit_tests/*.png
+app_starter/unit_tests/*.json
+app_starter/unit_tests/*.css
+
+# Testing database
+app_starter/db.sqlite3
+
+# Helm and Terraform
+deployments/helm
+deployments/terraform
+
+# Static file dir to serve in production
+# App can run python3 manage.py collectstatic --no-input to get this dir
+*staticfiles*
