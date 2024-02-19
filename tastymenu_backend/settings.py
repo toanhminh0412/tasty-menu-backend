@@ -37,9 +37,7 @@ CSRF_TRUSTED_ORIGINS = json.loads(os.environ.get('CSRF_TRUSTED_ORIGINS'))
 
 # Specify URLs that can access this API
 CORS_ALLOWED_ORIGINS = json.loads(os.environ.get('CORS_ALLOWED_ORIGINS'))
-
-SESSION_COOKIE_SAMESITE = False
-CSRF_COOKIE_SAMESITE = False
+CORS_ALLOW_CREDENTIALS = True
 SESSION_COOKIE_DOMAIN = os.environ.get('SESSION_COOKIE_DOMAIN', None)
 CSRF_COOKIE_DOMAIN = os.environ.get('CSRF_COOKIE_DOMAIN', None)
 
@@ -58,7 +56,6 @@ CSRF_COOKIE_DOMAIN = os.environ.get('CSRF_COOKIE_DOMAIN', None)
 #     "hx-target",
 # ]
 
-CORS_ALLOW_CREDENTIALS = True
 # CSRF_COOKIE_SECURE = False
 
 # Application definition
