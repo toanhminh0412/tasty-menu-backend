@@ -38,7 +38,3 @@ app_starter/unit_tests/*.css
 
 # Testing database
 *db.sqlite3*
-
-# Static file dir to serve in production
-# App can run python3 manage.py collectstatic --no-input to get this dir
-*staticfiles*
