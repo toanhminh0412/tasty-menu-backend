@@ -38,10 +38,10 @@ CSRF_TRUSTED_ORIGINS = json.loads(os.environ.get('CSRF_TRUSTED_ORIGINS'))
 # Specify URLs that can access this API
 CORS_ALLOWED_ORIGINS = json.loads(os.environ.get('CORS_ALLOWED_ORIGINS'))
 
-SESSION_COOKIE_SAMESITE="None"
-CSRF_COOKIE_SAMESITE="None"
-SESSION_COOKIE_DOMAIN = ".vercel.app"
-CSRF_COOKIE_DOMAIN = ".vercel.app"
+SESSION_COOKIE_SAMESITE = False
+CSRF_COOKIE_SAMESITE = False
+SESSION_COOKIE_DOMAIN = os.environ.get('SESSION_COOKIE_DOMAIN', None)
+CSRF_COOKIE_DOMAIN = os.environ.get('CSRF_COOKIE_DOMAIN', None)
 
 # CORS_ALLOW_HEADERS = [
 #     "accept",
