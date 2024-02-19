@@ -37,11 +37,7 @@ app_starter/unit_tests/*.json
 app_starter/unit_tests/*.css
 
 # Testing database
-app_starter/db.sqlite3
-
-# Helm and Terraform
-deployments/helm
-deployments/terraform
+*db.sqlite3*
 
 # Static file dir to serve in production
 # App can run python3 manage.py collectstatic --no-input to get this dir
