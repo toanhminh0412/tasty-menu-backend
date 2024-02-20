@@ -31,7 +31,11 @@ def user_login(request):
         login(request, user)
 
         # Return a success response
-        return JsonResponse({'success': 'User logged in successfully'})
+        return JsonResponse({
+            'success': 'User logged in successfully',
+            'csrftoken': get_token(request),
+            'sessionid': request.session.session_key,
+        })
     else:
         # Return an error response if authentication fails
         return JsonResponse({'error': 'Wrong email or password. Please try again!'}, status=400)
@@ -68,7 +72,11 @@ def user_signup(request):
     login(request, user)
 
     # Return a success response
-    return JsonResponse({'success': 'User signed up and logged in successfully'})
+    return JsonResponse({
+        'success': 'User signed up and logged in successfully',
+        'csrftoken': get_token(request),
+        'sessionid': request.session.session_key,
+    })
     
 # User logout
 @require_http_methods(["POST"])  # Restrict this view to POST requests only
