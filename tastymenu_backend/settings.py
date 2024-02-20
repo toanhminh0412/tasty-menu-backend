@@ -36,9 +36,9 @@ CORS_ALLOWED_ORIGINS = json.loads(os.environ.get('CORS_ALLOWED_ORIGINS'))
 CORS_ALLOW_CREDENTIALS = True
 
 # NOTE: Set to '.vercel.app' does not work. I don't know why
-# SESSION_COOKIE_DOMAIN = os.environ.get('SESSION_COOKIE_DOMAIN', None)
+SESSION_COOKIE_DOMAIN = os.environ.get('SESSION_COOKIE_DOMAIN', None)
 
-# SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_DOMAIN = os.environ.get('CSRF_COOKIE_DOMAIN', None)
 SESSION_COOKIE_SAMESITE = 'None'
 
