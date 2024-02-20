@@ -30,8 +30,12 @@ def user_login(request):
         # Log the user in
         login(request, user)
 
+        response = JsonResponse({'success': 'User logged in successfully'})
+        response.set_cookie('csrftoken', get_token(request))
+
         # Return a success response
-        return JsonResponse({'success': 'User logged in successfully'})
+        # return JsonResponse({'success': 'User logged in successfully'})
+        return response
     else:
         # Return an error response if authentication fails
         return JsonResponse({'error': 'Wrong email or password. Please try again!'}, status=400)
