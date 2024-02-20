@@ -18,7 +18,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -32,34 +31,16 @@ ALLOWED_HOSTS = json.loads(os.environ.get('ALLOWED_HOSTS'))
 
 CSRF_TRUSTED_ORIGINS = json.loads(os.environ.get('CSRF_TRUSTED_ORIGINS'))
 
-# SESSION_COOKIE_HTTPONLY = True
-# CSRF_COOKIE_SECURE = False
-
 # Specify URLs that can access this API
 CORS_ALLOWED_ORIGINS = json.loads(os.environ.get('CORS_ALLOWED_ORIGINS'))
 CORS_ALLOW_CREDENTIALS = True
-SESSION_COOKIE_DOMAIN = os.environ.get('SESSION_COOKIE_DOMAIN', None)
+
+# NOTE: Set to '.vercel.app' does not work. I don't know why
+# SESSION_COOKIE_DOMAIN = os.environ.get('SESSION_COOKIE_DOMAIN', None)
+
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_DOMAIN = os.environ.get('CSRF_COOKIE_DOMAIN', None)
 SESSION_COOKIE_SAMESITE = 'None'
-# CSRF_COOKIE_SAMESITE = False
-
-# CORS_ALLOW_HEADERS = [
-#     "accept",
-#     "accept-encoding",
-#     "authorization",
-#     "content-type",
-#     "dnt",
-#     "origin",
-#     "user-agent",
-#     "x-csrftoken",
-#     "x-requested-with",
-#     "hx-request",
-#     "hx-current-url",
-#     "hx-target",
-# ]
-
-# CSRF_COOKIE_SECURE = False
 
 # Application definition
 INSTALLED_APPS = [
